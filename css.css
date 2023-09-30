@@ -22,8 +22,12 @@ div {
 	grid-template-columns: minmax(1em, auto) 1fr minmax(1em, auto);
 }
 
+section {
+	display: grid;
+	grid-template-columns: minmax(1em, auto) 1fr minmax(1em, auto);
+}
 
-main div.content {
+main section.content {
 	--fold: 35;
 	/* hoe breed mag een paragraaf zijn */
 	--ratio: 1.414;
@@ -36,12 +40,8 @@ main {
 
 }
 
-.flaneerbrigade:first-of-type,
-.content {
-	background-color: hsl(31, 100%, 41%);
-}
 
-.con
+
 
 /* RESET */
 *,
@@ -78,7 +78,7 @@ body {
 }
 
 
-/* DEFAULT INLINE STYLES */
+/* changing attr */
 
 div p {
 	font-family: "corporate";
@@ -86,7 +86,34 @@ div p {
 
 }
 
-/* BLOCK */
+section p {
+	font-family: "corporate";
+	color: white;
+
+}
+
+cite {
+	text-align: center;
+	font-family: "corporate";
+}
+section:nth-of-type(3),
+section:nth-of-type(4) {
+	background-color: white;
+}
+
+section:nth-of-type(3) p,
+section:nth-of-type(4) p {
+	color: hsl(31, 100%, 41%);
+}
+.flaneerbrigade:first-of-type,
+.content {
+	background-color: hsl(31, 100%, 41%);
+}
+section:last-of-type{
+	padding-bottom:4em ;
+}
+
+/* vaste waarden h1 h2  */
 h1 {
 	/* 
 	vw = viewport width: 
@@ -100,6 +127,7 @@ h1 {
 	2. idealiter
 	3. maximale grootte
 	 */
+	overflow: hidden;
 	text-transform: uppercase;
 	font-family: "kimberleyblack";
 	line-height: 1;
@@ -110,18 +138,13 @@ h1 {
 	grid-column-end: -1;
 	display: flex;
 	justify-content: center;
+	font-size: clamp(3em, 7vw, 15em);
+	animation: zoomup 2s ease-in;
+	display: inline-block;
+	animation-delay: calc(200ms * var(--i));
 	color: white;
 }
 
-div:nth-of-type(3),
-div:nth-of-type(4) {
-	background-color: white;
-}
-
-div:nth-of-type(3) p,
-div:nth-of-type(4) p {
-	color: hsl(31, 100%, 41%);
-}
 
 h2 {
 	font-family: "kimberleyblack";
@@ -150,11 +173,10 @@ h2:hover {
 	font-size: clamp(2em, 7vw, 15em);
 }
 
-h3 {
-	font-size: calc(var(--ratio) * var(--ratio) * 1rem);
-	font-weight: normal;
-
+.content:last-of-type h2 {
+	color: white;
 }
+
 
 
 .flaneerbrigade {
@@ -167,7 +189,7 @@ h3 {
 /* h1 anim, eerste anim*/
 .text {
 	font-family: "kimberleyblack";
-	font-size: clamp(2em, 8vw, 15em);
+
 	width: 100%;
 	padding-top: 1em;
 	position: relative;
@@ -183,6 +205,7 @@ h3 {
 	display: inline-block;
 	animation-delay: calc(200ms * var(--i));
 	color: white;
+
 }
 
 @keyframes zoomup {
@@ -202,8 +225,35 @@ h3 {
 /* iconen schommel anim*/
 .images {
 	display: grid;
+	overflow: hidden;
+
+}
+
+img:first-of-type {
+	animation-name: border;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+@keyframes border {
+	0% {
+		border-radius: 10%;
+
+		rotate: 2deg;
+		translate: 0 1em;
 
 
+
+	}
+
+	100% {
+		border-radius: 15%;
+		translate: 0 -1em;
+		rotate: 2deg;
+
+
+	}
 }
 
 .images img {
@@ -217,6 +267,19 @@ h3 {
 
 }
 
+@media (max-width:900px) {
+	.images {
+
+		display: grid;
+		grid-template-columns: 90%;
+		width: 8em;
+		animation-name: schommel;
+		animation-duration: 5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+
+	}
+}
 
 @keyframes schommel {
 	0% {
@@ -289,4 +352,36 @@ span {
 		transform: translateX(0%);
 
 	}
+}
+
+/* tekst prompt einde*/
+.displaytekst {
+	font-family: "kimberleyblack";
+	display: flex;
+	justify-content: center;
+	font-size: 1.5em;
+}
+
+button {
+	background-color: white;
+	color: hsl(31, 100%, 41%);
+	border-color: none;
+	border-radius: 5%;
+
+}
+
+button:hover {
+	color: white;
+	background-color: hsl(31, 100%, 41%);
+
+}
+
+input {
+	font-size: 1em;
+}
+
+.name {
+	display: flex;
+	justify-content: center;
+	font-family: "corporate";
 }

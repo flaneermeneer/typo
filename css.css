@@ -95,7 +95,10 @@ section p {
 cite {
 	text-align: center;
 	font-family: "corporate";
+	font-weight: 400;
+	color: hsl(31, 100%, 41%);
 }
+
 section:nth-of-type(3),
 section:nth-of-type(4) {
 	background-color: white;
@@ -105,12 +108,14 @@ section:nth-of-type(3) p,
 section:nth-of-type(4) p {
 	color: hsl(31, 100%, 41%);
 }
+
 .flaneerbrigade:first-of-type,
 .content {
 	background-color: hsl(31, 100%, 41%);
 }
-section:last-of-type{
-	padding-bottom:4em ;
+
+section:last-of-type {
+	padding-bottom: 4em;
 }
 
 /* vaste waarden h1 h2  */
@@ -158,6 +163,10 @@ h2 {
 	padding-top: 0.5em;
 	transition: 1s all ease;
 	padding-bottom: 0em;
+}
+
+.invisible {
+	display: none;
 }
 
 h2:nth-of-type(1) {
@@ -365,23 +374,68 @@ span {
 button {
 	background-color: white;
 	color: hsl(31, 100%, 41%);
-	border-color: none;
-	border-radius: 5%;
+	border-color: hsl(31, 100%, 41%);
+	margin-top: 1em;
+	padding: 2em;
+	font-family: "corporate";
+	border-radius: 25px;
+
+
 
 }
+
+
 
 button:hover {
 	color: white;
-	background-color: hsl(31, 100%, 41%);
+	background-color: hsl(31, 100%, 68%);
+	font-family: "corporate";
 
 }
 
+
 input {
 	font-size: 1em;
+	font-family: "corporate";
+	border-radius: 25px;
+	height: 3em;
+	width: 100%;
+	background-color: hsl(31, 100%, 90%);
 }
 
 .name {
 	display: flex;
 	justify-content: center;
 	font-family: "corporate";
+	flex-direction: column;
+}
+@media (min-width:900px) {
+	.name {
+		display: flex;
+		justify-content: center;
+		font-family: "corporate";
+		flex-direction: row;	}
+
+		button {
+			background-color: white;
+			color: hsl(31, 100%, 41%);
+			border-color: hsl(31, 100%, 41%);
+			margin-left: 1em;
+			width: 30%;
+			font-family: "kimberleyblack";
+			border-radius: 25px;
+			margin-top: 0px;
+		
+		
+		}
+
+		input {
+			font-size: 1em;
+			font-family: "corporate";
+			border-radius: 25px;
+			height: 3em;
+			width: 100%;
+			background-color: hsl(31, 100%, 90%);
+		}
+		
 }

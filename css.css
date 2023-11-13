@@ -241,12 +241,23 @@ h2:hover {
 img:nth-of-type(2),
 img:nth-of-type(3),
 img:nth-of-type(4),
+img:nth-of-type(5) {
+	animation-name: border;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+	width: 15em;
+
+}
+
 img:first-of-type {
 	animation-name: border;
 	animation-duration: 5s;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
+
 }
+
 
 @keyframes border {
 	0% {

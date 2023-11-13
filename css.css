@@ -100,10 +100,11 @@ cite {
 }
 
 section:nth-of-type(3),
+section:nth-of-type(5),
 section:nth-of-type(4) {
 	background-color: white;
 }
-
+section:nth-of-type(5) p,
 section:nth-of-type(3) p,
 section:nth-of-type(4) p {
 	color: hsl(31, 100%, 41%);
@@ -182,7 +183,7 @@ h2:hover {
 	font-size: clamp(2em, 7vw, 15em);
 }
 
-.content:last-of-type h2 {
+.content:last-of-type > h2 {
 	color: white;
 }
 
@@ -237,7 +238,9 @@ h2:hover {
 	overflow: hidden;
 
 }
-
+img:nth-of-type(2),
+img:nth-of-type(3),
+img:nth-of-type(4),
 img:first-of-type {
 	animation-name: border;
 	animation-duration: 5s;
@@ -438,4 +441,15 @@ input {
 			background-color: hsl(31, 100%, 90%);
 		}
 		
+}
+ul li{
+	list-style: none;
+	display: grid;
+	font-family: "corporate";
+
+	justify-items: center;
+}
+a{
+	color: white;
+
 }

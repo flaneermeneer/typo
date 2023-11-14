@@ -173,6 +173,7 @@ h2 {
 h2:nth-of-type(1) {
 	color: hsl(31, 100%, 41%);
 	text-align: center;
+	padding-bottom:0.5em;
 }
 
 h2.orange {
@@ -457,8 +458,10 @@ ul li{
 	list-style: none;
 	display: grid;
 	font-family: "corporate";
-
 	justify-items: center;
+}
+ul{
+	padding: 0em;
 }
 a{
 	color: white;
